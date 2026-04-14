@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import Hero from "../Components/Hero/Hero";
 import AboutMe from "../Components/About/AboutMe";
 import ProjectContainer from "../Components/Project/ProjectContainer";
-import BlogsContainer from "../Components/Blogs/BlogsContainer";
 import ContactHome from "../Components/Contact/ContactHome";
 
 const fadeInVariant = {
@@ -16,7 +15,7 @@ const fadeInVariant = {
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-4 relative max-w-[1700px] mx-auto overflow-hidden">
+    <div className="flex flex-col gap-4 relative max-w-[1600px] mx-auto overflow-hidden">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -42,15 +41,6 @@ const Home = () => {
         variants={fadeInVariant}
       >
         <ProjectContainer />
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={fadeInVariant}
-      >
-        <BlogsContainer />
       </motion.div>
 
       <motion.div

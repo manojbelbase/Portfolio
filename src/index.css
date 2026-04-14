@@ -9,14 +9,44 @@
   z-index: 9999 !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: black;
   color: white;
   font-family: "Fira Code", monospace;
+  overflow-x: hidden;
 }
 
 * {
   font-family: "Fira Code", monospace;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::selection {
+  background-color: #4ade80;
+  color: black;
+}
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2226;
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4ade80;
 }
 
 /* Or apply it to specific code elements */

@@ -1,9 +1,8 @@
-import React from "react";
 import AboutMe from "../Components/About/AboutMe";
 
 const About = () => {
   return (
-    <div className="max-w-[1700px] mx-auto">
+    <div className="max-w-[1600px] mx-auto">
       <div className="flex flex-col gap-1 mb-6 ">
         <h1 className="text-3xl font-bold">
           {" "}

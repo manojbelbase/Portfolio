@@ -19,10 +19,6 @@ const navItems = [
     path: "/projects",
   },
   {
-    title: "Blog",
-    path: "/blogs",
-  },
-  {
     title: "Contact",
     path: "/contact",
   },
@@ -54,13 +50,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled
-        ? " backdrop-blur-lg shadow-xl my-2"
-        : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-[0.22,1,0.36,1] ${scrolled
+        ? " backdrop-blur-md shadow-2xl py-2"
+        : "bg-transparent py-6"
         }`}
     >
       <div
-        className={`lg:mx-24 md:mx-16 sm:mx-6 mx-2 bg-[#1E2226] rounded-md md:rounded-full px-2 py-2 md:border border-gray-700 transition-all duration-300 ${scrolled ? "shadow-lg bg-opacity-80" : ""
+        className={`lg:mx-24 md:mx-16 sm:mx-6 mx-2 bg-[#1E2226]/80 backdrop-blur-xl rounded-2xl md:rounded-full px-4 py-2 border border-white/10 transition-all duration-500 ease-[0.22,1,0.36,1] ${scrolled ? "shadow-2xl border-white/20" : ""
           }`}
       >
         <div className="flex items-center justify-between">
