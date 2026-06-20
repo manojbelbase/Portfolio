@@ -85,8 +85,6 @@ const AboutMe = () => {
           )}
         </motion.div>
 
-        {/* about image */}
-        {/* about image */}
         {location.pathname === hideReadMoreBtnRoute && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -98,7 +96,7 @@ const AboutMe = () => {
               <img
                 src={aboutImage}
                 alt="Manoj Belbase"
-                className="w-full h-80 sm:h-auto object-cover rounded-2xl shadow-lg"
+                className="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-lg"
               />
             </div>
           </motion.div>
