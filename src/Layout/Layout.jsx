@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Components/Shared/Navbar";
 import Footer from "../Components/Shared/Footer";
-import { motion, AnimatePresence } from "framer-motion";
+import CookieConsent from "../Components/Shared/CookieConsent";
+import { motion } from "framer-motion";
 
 const Layout = () => {
   const { pathname } = useLocation();
 
-  // Scroll to top on route change
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
   return (
@@ -17,21 +17,25 @@ const Layout = () => {
       <Navbar />
 
       <main className="sm:pt-24 pt-20">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={pathname}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:mx-24 md:mx-16 sm:mx-6 mx-2 md:my-10 my-6"
-          >
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          className="lg:mx-24 md:mx-16 sm:mx-6 mx-2 md:my-10 my-6"
+        >
+          <Suspense fallback={
+            <div className="flex items-center justify-center min-h-[400px]">
+              <div className="w-8 h-8 border-2 border-secondary border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          }>
             <Outlet />
-          </motion.div>
-        </AnimatePresence>
+          </Suspense>
+        </motion.div>
       </main>
 
       <Footer />
+      <CookieConsent />
     </div>
   );
 };

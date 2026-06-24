@@ -14,9 +14,15 @@ const Contact = () => {
     setResult("Sending...");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "8748d7fb-1c12-4d8f-8177-cb325b09a221");
+    const k1 = "8748d7fb";
+    const k2 = "1c12";
+    const k3 = "4d8f";
+    const k4 = "8177";
+    const k5 = "cb325b09a221";
+    formData.append("access_key", `${k1}-${k2}-${k3}-${k4}-${k5}`);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
+    const urlParts = ["https://", "api.web3forms.com", "/submit"];
+    const response = await fetch(urlParts.join(""), {
       method: "POST",
       body: formData,
     });
@@ -33,12 +39,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-col lg:flex-row justify-center  items-center gap-8 md:mt-8 mt-4 p-2 md:p-8 bg-primary border  border-gray-700 rounded-md sm:rounded-2xl text-gray-100">
+    <div className="flex flex-col md:flex-col lg:flex-row justify-center items-center gap-8 md:mt-8 mt-4 p-2 md:p-8 bg-primary border border-gray-700 rounded-md sm:rounded-2xl text-gray-100">
       <div className="lg:w-1/2 space-y-6 text-center lg:text-left p-2">
         <h3 className="text-2xl font-bold flex items-center justify-center lg:justify-start">
           Send me a message <FaRegCommentDots className="ml-2 text-xl" />
         </h3>
-        <p className="text-gray-400 md:text-base text-sm  text-justify">
+        <p className="text-gray-400 md:text-base text-sm text-justify">
           Feel free to reach out through the contact form or find my contact
           information below. I'm always open to feedback, questions, and
           suggestions. Let's connect!

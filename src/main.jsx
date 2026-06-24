@@ -7,7 +7,7 @@ import MyState from "./context/myState.jsx";
 import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
     <StrictMode>
       <MyState>
         <App />

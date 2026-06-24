@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Force Chatbase widget to top layer */
-#chatbase-root,
-.chatbase-bubble,
-.chatbase-iframe {
-  z-index: 9999 !important;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -192,3 +185,104 @@ pre {
 .animate-pulse-ring {
   animation: pulse-ring 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
+
+/* Premium Blog Typography styles */
+.blog-content {
+  color: #d1d5db; /* text-gray-300 */
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.blog-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #374151; /* border-gray-700 */
+  padding-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-content strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.blog-content a {
+  color: #4ade80; /* text-secondary */
+  text-decoration: none;
+  border-bottom: 1px dashed #4ade80;
+  transition: all 0.2s ease;
+}
+
+.blog-content a:hover {
+  color: #ffffff;
+  border-bottom-style: solid;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #4ade80;
+  background-color: rgba(30, 34, 38, 0.4);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #e5e7eb;
+}
+
+.blog-content pre {
+  background-color: #0d0e12;
+  border: 1px solid #374151;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+}
+
+.blog-content code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  background-color: rgba(30, 34, 38, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  color: #4ade80;
+}
+
+.blog-content pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: #e5e7eb;
+  font-size: inherit;
+}
