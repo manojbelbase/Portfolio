@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="mt-6 sm:mt-10 scroll-mt-6">
         <SectionHeading>Experience</SectionHeading>
-      <div className="sm:space-y-8">
+      <div className="space-y-4 sm:space-y-8">
         {experience.map((item) => (
           <article
             key={`${item.role}-${item.company}`}
