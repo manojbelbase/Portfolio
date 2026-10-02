@@ -2,6 +2,7 @@ export const workItems = [
   { title: "ScheduleMate AI", note: "AI scheduling assistant", description: "Plans and manages calendar events through natural language.", href: "https://schedulemateai.vercel.app/", image: "/schedulemate-preview.webp", logo: "/schedulemate-logo.ico" },
   { title: "SimplePatro", note: "Minimal Nepali calendar", description: "An ad-free Nepali Patro (Bikram Sambat) with tithi, events, and a clean everyday interface — on web, iOS, and Android.", href: "https://www.simplepatro.com/", logo: "/simplepatro-logo.ico" },
   { title: "Jiban Multi Agro", note: "Agriculture website", description: "An ecommerce and services website for fruit saplings, field visits, soil testing, and agricultural support.", href: "https://www.jibanmultiagro.com.np/", image: "/jibanmultiagro-preview.webp", logo: "/jibanmultiagro-logo.ico" },
+  { title: "CaseoPro", note: "iGaming & digital marketing platform", description: "A powerful and scalable iGaming and digital marketing platform offering smart strategies, engaging user experiences, and tools that help gaming brands grow.", href: "https://caseopro.vercel.app/", image: "/caseopro-preview.webp", logo: "/caseopro-logo.svg" },
 ];
 
 export const techStack = ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL", "Docker","Git"];

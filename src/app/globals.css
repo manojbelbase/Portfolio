@@ -86,9 +86,28 @@ select {
   }
 }
 
+/* soft entrance for newly revealed project rows */
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-in {
+  animation: fade-slide-in 0.35s ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .group\/motion > span,
   .group\/khukuri strong {
     animation: none !important;
+  }
+  .animate-fade-slide-in {
+    animation: none;
   }
 }
