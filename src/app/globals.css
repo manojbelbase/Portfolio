@@ -102,12 +102,30 @@ select {
   animation: fade-slide-in 0.35s ease-out both;
 }
 
+/* gentle nudge hinting the projects expander (plays 3 times, then rests) */
+@keyframes expand-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.animate-expand-hint {
+  animation: expand-hint 1.6s ease-in-out 3;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .group\/motion > span,
   .group\/khukuri strong {
     animation: none !important;
   }
   .animate-fade-slide-in {
+    animation: none;
+  }
+  .animate-expand-hint {
     animation: none;
   }
 }

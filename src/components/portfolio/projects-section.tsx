@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { ChevronsDown } from "lucide-react";
 import { workItems } from "@/data/portfolio-data";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { cn } from "@/lib/utils";
@@ -12,6 +12,7 @@ const VISIBLE_COUNT = 3;
 
 export default function ProjectsSection() {
   const [expanded, setExpanded] = useState(false);
+  const [hintDone, setHintDone] = useState(false);
   const visibleItems = expanded ? workItems : workItems.slice(0, VISIBLE_COUNT);
 
   return (
@@ -65,23 +66,29 @@ export default function ProjectsSection() {
         ))}
       </div>
       {workItems.length > VISIBLE_COUNT && (
-        <button
-          type="button"
-          onClick={() => setExpanded((v) => !v)}
-          aria-expanded={expanded}
-          className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[12px] font-medium uppercase tracking-[0.1em] text-[var(--muted)] transition-colors duration-300 hover:border-[var(--primary)] hover:text-[var(--foreground)]"
-        >
-          {expanded ? "Show less" : `Show all (${workItems.length})`}
-          <ChevronDown
-            size={14}
-            strokeWidth={2.2}
-            aria-hidden="true"
-            className={cn(
-              "transition-transform duration-300",
-              expanded && "rotate-180",
-            )}
-          />
-        </button>
+        <div className="mt-1 flex justify-center">
+          <button
+            type="button"
+            onClick={() => {
+              setExpanded((v) => !v);
+              setHintDone(true);
+            }}
+            aria-expanded={expanded}
+            aria-label={expanded ? "Show fewer projects" : "Show more projects"}
+            className="inline-flex items-center justify-center p-1.5 text-[var(--muted)] transition hover:text-[var(--primary)]"
+          >
+            <ChevronsDown
+              size={18}
+              strokeWidth={2}
+              aria-hidden="true"
+              className={cn(
+                "transition-transform duration-300",
+                expanded && "rotate-180",
+                !expanded && !hintDone && "animate-expand-hint",
+              )}
+            />
+          </button>
+        </div>
       )}
     </section>
   );
