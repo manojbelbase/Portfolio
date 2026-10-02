@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  --background: #0b0b0b;
+  --foreground: #f5f5f5;
+  --muted: #a3a3a3;
+  --surface: #111111;
+  --surface-soft: rgba(255, 255, 255, 0.04);
+  --primary: #4ade80;
+  --primary-soft: rgba(74, 222, 128, 0.16);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+html.dark {
+  --background: #0b0b0b;
+  --foreground: #f5f5f5;
+  --muted: #a3a3a3;
+  --surface: #111111;
+  --surface-soft: rgba(255, 255, 255, 0.04);
+  --primary: #4ade80;
+  --primary-soft: rgba(74, 222, 128, 0.16);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+html:not(.dark) {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  --muted: #1f2937;
+  --surface: #f7f7f7;
+  --surface-soft: #f1f2f3;
+  --primary: #22c55e;
+  --primary-soft: rgba(34, 197, 94, 0.1);
+  --border: rgba(17, 17, 17, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  color-scheme: light;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #d1d5db;
+  color: #111827;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* light sheen sweeping left-to-right across hero "smooth interactions" text */
+@keyframes sheen {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -20% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group\/motion > span,
+  .group\/khukuri strong {
+    animation: none !important;
+  }
 }

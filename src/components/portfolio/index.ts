@@ -1,0 +1,10 @@
+export { default as SiteHeader } from "./site-header";
+export { default as HeroSection } from "./hero-section";
+export { default as ProjectsSection } from "./projects-section";
+export { default as ExperienceSection } from "./experience-section";
+export { default as AchievementSection } from "./achievement-section";
+export { default as EducationSection } from "./education-section";
+export { default as WritingSection } from "./writing-section";
+export { default as TechStackSection } from "./tech-stack-section";
+export { default as ContactFooter } from "./contact-footer";
+export { default as SectionHeading } from "./section-heading";
