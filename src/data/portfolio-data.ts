@@ -49,7 +49,7 @@ export const experience = [
       { name: "RestroX", logo: "/restrox-logo.ico" },
       { name: "SimplePatro", logo: "/simplepatro-logo.ico" },
     ],
-    continuation: "Collaborated with cross-functional teams to deliver polished, responsive user experiences.",
+    continuation: "Worked closely with the team to deliver polished, high-quality user experiences.",
   },
   {
     period: "DEC 2024 — Dec 2025",
@@ -57,6 +57,6 @@ export const experience = [
     company: "Web Studio Nepal",
     href: "https://webstudionepal.com/",
     logo: "/webstudionepal-logo.png",
-    description: "Built ecommerce platforms, SEO-focused frontend websites, and responsive interfaces for businesses across different industries. Worked across frontend implementation, page structure, and responsive user experiences.",
+    description: "Built ecommerce platforms and SEO-friendly websites for businesses across different industries, focusing on clean structure, responsive design, and performance.",
   },
 ];
