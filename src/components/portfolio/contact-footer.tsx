@@ -56,9 +56,25 @@ export default function ContactFooter() {
         >
           Instagram
         </a>
+        <a
+          href="https://www.npmjs.com/~manojbelbase"
+          target="_blank"
+          rel="noreferrer"
+          className="transition hover:text-[var(--primary)]"
+        >
+          npm
+        </a>
+        <a
+          href="https://medium.com/@manojbelbase"
+          target="_blank"
+          rel="noreferrer"
+          className="transition hover:text-[var(--primary)]"
+        >
+          Medium
+        </a>
       </div>
       <p className="mt-4 leading-6">
-        Follow my work on GitHub, read what I write on Medium, connect on LinkedIn, or email me at{" "}
+        Follow my work on GitHub, check my packages on npm, read what I write on Medium, connect on LinkedIn, or email me at{" "}
         <span className="inline-flex items-center gap-1 align-baseline">
           <a
             href={`mailto:${EMAIL}`}

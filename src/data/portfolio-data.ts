@@ -6,6 +6,11 @@ export const workItems = [
   { title: "Jiban Multi Agro", note: "Agriculture website", description: "An ecommerce and services website for fruit saplings, field visits, soil testing, and agricultural support.", href: "https://www.jibanmultiagro.com.np/", image: "/jibanmultiagro-preview.webp", logo: "/jibanmultiagro-logo.ico" },
 ];
 
+export const npmPackages = [
+  { name: "miti-pariwartan", href: "https://www.npmjs.com/package/miti-pariwartan", description: "Lightweight offline Nepali Bikram Sambat ↔ AD date converter." },
+  { name: "ai-response-parser", href: "https://www.npmjs.com/package/ai-response-parser", description: "React component to render AI responses with markdown + code highlight." },
+];
+
 export const techStack = ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL", "Docker","Git"];
 
 export const education = [

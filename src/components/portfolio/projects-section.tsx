@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronsDown } from "lucide-react";
-import { workItems } from "@/data/portfolio-data";
+import { workItems, npmPackages } from "@/data/portfolio-data";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { cn } from "@/lib/utils";
 import SectionHeading from "./section-heading";
@@ -64,6 +64,45 @@ export default function ProjectsSection() {
             </span>
           </div>
         ))}
+        <div className="group flex items-center gap-2 sm:gap-3 py-1 text-[15px] text-[var(--muted)]">
+          <span className="relative inline-flex h-5 w-5 items-center justify-center overflow-hidden rounded-sm bg-[var(--primary-soft)] text-[10px] font-medium text-[var(--primary)] transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110">
+            <Image src="/npm-logo.svg" alt="npm" width={20} height={20} className="h-full w-full object-contain" />
+          </span>
+          <span className="relative">
+            <span className="font-medium text-sm sm:text-base text-[var(--foreground)]">npm packages</span>
+            <span className="text-[var(--muted)]"> - </span>
+            {npmPackages.map((pkg, pkgIndex) => (
+              <span
+                key={pkg.name}
+                tabIndex={0}
+                role="button"
+                aria-label={`${pkg.name}: ${pkg.description}`}
+                className="group/pkg relative inline cursor-pointer rounded-sm transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--primary)]"
+              >
+                <a
+                  href={pkg.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-medium text-[var(--muted)] underline decoration-dotted decoration-[var(--muted)]/60 underline-offset-4 transition hover:text-[var(--primary)] hover:decoration-[var(--primary)]"
+                >
+                  {pkg.name}
+                </a>
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-52 -translate-x-1/2 translate-y-1 scale-[0.97] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-2.5 text-left text-xs font-normal leading-5 text-[var(--muted)] opacity-0 shadow-xl transition-all duration-200 ease-out group-hover/pkg:translate-y-0 group-hover/pkg:opacity-100 group-hover/pkg:scale-100 group-focus-visible/pkg:translate-y-0 group-focus-visible/pkg:opacity-100 group-focus-visible/pkg:scale-100"
+                >
+                  <span className="mb-0.5 flex font-medium text-[var(--foreground)]">{pkg.name}</span>
+                  {pkg.description}
+                  <span className="absolute left-1/2 top-full -translate-x-1/2 border-8 border-transparent border-t-[var(--surface)]" />
+                </span>
+                {pkgIndex < npmPackages.length - 1 && (
+                  <span className="text-[var(--muted)]">, </span>
+                )}
+              </span>
+            ))}
+          </span>
+        </div>
       </div>
       {workItems.length > VISIBLE_COUNT && (
         <div className="mt-1 flex justify-center">
