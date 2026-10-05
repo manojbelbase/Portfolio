@@ -41,7 +41,7 @@ export default function ExperienceSection() {
                 {item.description}
                 {item.projects && (
                   <>
-                    {` ${"projectsPrefix" in item && typeof item.projectsPrefix === "string" ? item.projectsPrefix : "Contributed to"} `}
+                    {` ${item.projectsPrefix ?? "Contributed to"} `}
                     {item.projects.map((project, index) => (
                       <span key={project.name}>
                         {index > 0 && " and "}
@@ -53,7 +53,18 @@ export default function ExperienceSection() {
                             height={16}
                             className="h-4 w-4 rounded object-contain"
                           />
-                          {project.name}
+                          {project.href ? (
+                            <a
+                              href={project.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="transition hover:text-[var(--primary)]"
+                            >
+                              {project.name}
+                            </a>
+                          ) : (
+                            <span>{project.name}</span>
+                          )}
                         </span>
                       </span>
                     ))}
