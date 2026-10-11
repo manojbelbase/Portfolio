@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MousePointerClick } from "lucide-react";
 import { TiltGlowImage } from "@/components/ui/tilt-glow-image";
+import { ProfileMascot } from "./profile-mascot";
 import { HeroInlineIcon, HeroKeyword, HeroKhukuri, HeroMotionWord } from "./hero-keyword";
 
 export default function HeroSection() {
@@ -12,7 +13,7 @@ export default function HeroSection() {
         className="aspect-[16/6] w-full rounded-lg sm:aspect-[1440/500] lg:aspect-[1440/430]"
       />
       <div className="relative ml-5 -mt-10">
-        <div className="h-16 w-16 overflow-hidden rounded-lg bg-[#1a1a1a] ring-[var(--background)] border border-gray-100 dark:border-gray-600">
+        <div data-profile-photo className="h-16 w-16 overflow-hidden rounded-lg bg-[#1a1a1a] ring-[var(--background)] border border-gray-100 dark:border-gray-600">
           <Image
             src="/profile-cropped.png"
             alt="Manoj Belbase"
@@ -24,12 +25,15 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="mt-4 space-y-2 sm:space-y-3">
-        <h1 className="flex items-center gap-2 text-[2rem] font-semibold tracking-[-0.05em] text-[var(--foreground)]">
+        <div className="flex items-center justify-between gap-2">
+          <h1 className="flex min-w-0 flex-wrap items-center gap-2 text-[2rem] font-semibold tracking-[-0.05em] text-[var(--foreground)]">
           Manoj Belbase
           <span className="inline-flex text-base leading-none" role="img" aria-label="Nepal">
             🇳🇵
           </span>
-        </h1>
+          </h1>
+          <ProfileMascot />
+        </div>
 
         <div className="space-y-2 sm:space-y-4 text-[15px] leading-7 text-[var(--muted)]">
           <p>
