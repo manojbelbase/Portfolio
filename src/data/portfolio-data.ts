@@ -41,7 +41,7 @@ export const experience: ExperienceItem[] = [
     description: "Leading frontend development, driving technical decisions and feature delivery,",
     projectsPrefix: "Currently working on",
     projects: [
-      { name: "Dreams Care Homes CRM", logo: "/dreams-care-homes-logo.ico" , href: "https://www.dreamscarehomes.co.uk/"},
+      { name: "Dreams Care Homes HRM", logo: "/dreams-care-homes-logo.ico" , href: "https://www.dreamscarehomes.co.uk/"},
     ],
     continuation: "Collaborating with design and backend teams to ship maintainable, high-quality experiences.",
   },
@@ -54,8 +54,8 @@ export const experience: ExperienceItem[] = [
     description: "Contributed responsive interfaces and performance improvements across BlackTech products including",
     projectsPrefix: "",
     projects: [
-      { name: "RestroX", logo: "/restrox-logo.ico" },
-      { name: "SimplePatro", logo: "/simplepatro-logo.ico" },
+      { name: "RestroX", logo: "/restrox-logo.ico" , href: "https://restrox.com/"},
+      { name: "SimplePatro", logo: "/simplepatro-logo.ico" , href: "https://simplepatro.com/"},
     ],
     continuation: "Worked closely with the team to deliver polished, high-quality user experiences.",
   },
