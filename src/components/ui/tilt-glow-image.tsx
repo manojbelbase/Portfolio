@@ -18,6 +18,7 @@ export function TiltGlowImage({ src, alt, className, maxTilt = 7 }: TiltGlowImag
   const containerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
   const glareRef = useRef<HTMLSpanElement>(null);
+  const lensRef = useRef<HTMLSpanElement>(null);
   const [hovered, setHovered] = useState(false);
   const [motionStatus, setMotionStatus] = useState("idle");
   const enableMotionRef = useRef<(() => Promise<void>) | null>(null);
@@ -32,7 +33,8 @@ export function TiltGlowImage({ src, alt, className, maxTilt = 7 }: TiltGlowImag
     const container = containerRef.current;
     const inner = innerRef.current;
     const glare = glareRef.current;
-    if (!container || !inner || !glare) return;
+    const lens = lensRef.current;
+    if (!container || !inner || !glare || !lens) return;
 
     const target = { x: 0.5, y: 0.5, active: 0 };
     const current = { x: 0.5, y: 0.5, active: 0 };
@@ -128,14 +130,29 @@ export function TiltGlowImage({ src, alt, className, maxTilt = 7 }: TiltGlowImag
       const ry = (current.x - 0.5) * maxTilt * 2 * current.active;
       inner.style.transform = `perspective(1000px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(
         2,
-      )}deg) scale(${(1 + current.active * 0.035).toFixed(3)})`;
+      )}deg) scale(${(1 + current.active * 0.1).toFixed(3)})`;
 
-      glare.style.opacity = `${(current.active * 0.9).toFixed(2)}`;
-      glare.style.background = `radial-gradient(circle at ${(
-        current.x * 100
-      ).toFixed(1)}% ${(current.y * 100).toFixed(
-        1,
-      )}%, rgba(255,255,255,.34) 0%, rgba(255,255,255,.12) 22%, transparent 55%)`;
+      glare.style.opacity = current.active.toFixed(2);
+      const lightPosition = `${(current.x * 100).toFixed(1)}% ${(current.y * 100).toFixed(1)}%`;
+      // A diffuse halo with a soft ripple edge, eased behind the pointer.
+      glare.style.background = `radial-gradient(circle 110px at ${lightPosition}, rgba(255,255,255,.15) 0%, rgba(190,220,255,.07) 38%, transparent 75%), radial-gradient(circle 80px at ${lightPosition}, transparent 42%, rgba(215,235,255,.01) 58%, rgba(215,235,255,.035) 72%, rgba(215,235,255,.01) 88%, transparent 100%)`;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      const x = current.x * width;
+      const y = current.y * height;
+      const radius = 72;
+      const zoom = 1.4;
+      // Match object-cover before magnifying, preserving the image's aspect ratio.
+      const img = inner.querySelector("img");
+      if (img?.naturalWidth && img.naturalHeight) {
+        const cover = Math.max(width / img.naturalWidth, height / img.naturalHeight);
+        const imageWidth = img.naturalWidth * cover;
+        const imageHeight = img.naturalHeight * cover;
+        lens.style.backgroundSize = `${imageWidth * zoom}px ${imageHeight * zoom}px`;
+        lens.style.backgroundPosition = `${radius - (x + (imageWidth - width) / 2) * zoom}px ${radius - (y + (imageHeight - height) / 2) * zoom}px`;
+      }
+      lens.style.transform = `translate(${x - radius}px, ${y - radius}px)`;
+      lens.style.opacity = current.active.toFixed(2);
 
       raf = requestAnimationFrame(tick);
     };
@@ -198,7 +215,15 @@ export function TiltGlowImage({ src, alt, className, maxTilt = 7 }: TiltGlowImag
         />
       </div>
 
-      {/* cursor-following glare */}
+      {/* softly feathered magnifying bubble */}
+      <span
+        ref={lensRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 top-0 size-36 rounded-full bg-no-repeat opacity-0 [mask-image:radial-gradient(circle,black_55%,transparent_72%)]"
+        style={{ backgroundImage: `url(${JSON.stringify(src)})` }}
+      />
+
+      {/* soft cursor-following light ripple */}
       <span
         ref={glareRef}
         aria-hidden="true"
@@ -217,25 +242,7 @@ export function TiltGlowImage({ src, alt, className, maxTilt = 7 }: TiltGlowImag
         </button>
       )}
 
-      {/* slow shine sweep */}
-      <span
-        aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute inset-y-[-20%] left-0 w-1/4 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-[1200ms] ease-out",
-          hovered && !reduced
-            ? "translate-x-[500%] opacity-100"
-            : "-translate-x-[200%] opacity-0",
-        )}
-      />
 
-      {/* bottom glow line */}
-      <span
-        aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute inset-x-8 bottom-3 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-0 blur-[0.5px] transition-opacity duration-700",
-          hovered && !reduced && "opacity-100",
-        )}
-      />
     </div>
   );
 }
