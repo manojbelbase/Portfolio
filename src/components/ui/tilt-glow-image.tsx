@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type MotionPermissionAPI = {
@@ -198,10 +199,12 @@ export function TiltGlowImage({ src, alt, className, maxTilt = 7 }: TiltGlowImag
       )}
     >
       <div ref={innerRef} className="absolute inset-0 will-change-transform">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={src}
           alt={alt}
+          fill
+          sizes="(max-width: 760px) 100vw, 712px"
+          priority
           draggable={false}
           className="size-full object-cover"
         />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -13,19 +14,27 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Manoj Belbase | Frontend Developer",
-  description: "Frontend Developer building modern web experiences with React, Next.js, and clean UI systems.",
-  metadataBase: new URL("https://manojbelbase.com.np"),
+  title: site.title,
+  description: site.description,
+  metadataBase: new URL(site.url),
+  authors: [{ name: site.name, url: site.url }],
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Manoj Belbase | Frontend Developer",
-    description: "Frontend Developer building modern web experiences with React, Next.js, and clean UI systems.",
-    url: "https://manojbelbase.com.np",
+    title: site.title,
+    description: site.description,
+    siteName: site.name,
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: [{ url: "/opengraph-image", alt: site.title }],
   },
 };
 
