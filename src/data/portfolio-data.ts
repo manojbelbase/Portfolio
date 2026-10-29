@@ -69,5 +69,4 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
-export const spotifyPlaylistEmbedUrl =
-  "https://open.spotify.com/embed/playlist/06Dw6zZRQ04CuEy1460exT?utm_source=generator";
+export const spotifyTrackUri = "spotify:track:6H7fLdt0AeWpuxUKXuXWrx";
