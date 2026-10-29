@@ -5,6 +5,7 @@ export { default as ExperienceSection } from "./experience-section";
 export { default as AchievementSection } from "./achievement-section";
 export { default as EducationSection } from "./education-section";
 export { default as WritingSection } from "./writing-section";
+export { default as GithubActivitySection } from "./github-activity-section";
 export { default as TechStackSection } from "./tech-stack-section";
 export { default as ContactFooter } from "./contact-footer";
 export { default as SectionHeading } from "./section-heading";
