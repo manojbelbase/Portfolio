@@ -47,7 +47,7 @@ export default function MusicSection() {
     const setup = (api: IFrameAPI) => {
       api.createController(
         container,
-        { uri: spotifyTrackUri, width: "100%", height: 140 },
+        { uri: spotifyTrackUri, width: "100%", height: 152 },
         (embed) => {
           controller = embed;
           embed.addListener("playback_update", (event) => {
