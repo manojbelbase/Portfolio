@@ -68,3 +68,6 @@ export const experience: ExperienceItem[] = [
     description: "Built ecommerce platforms and SEO-friendly websites for businesses across different industries, focusing on clean structure, responsive design, and performance.",
   },
 ];
+
+export const spotifyPlaylistEmbedUrl =
+  "https://open.spotify.com/embed/playlist/06Dw6zZRQ04CuEy1460exT?utm_source=generator";
