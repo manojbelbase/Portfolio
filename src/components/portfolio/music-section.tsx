@@ -5,7 +5,7 @@ export default function MusicSection() {
   return (
     <section className="mt-6 sm:mt-10" aria-label="Music">
       <SectionHeading>Music</SectionHeading>
-      <p className="mb-3 text-sm text-[var(--muted)]">The soundtrack to my everyday.</p>
+      <p className="mb-3 text-sm text-[var(--muted)]">Songs that fill my days.</p>
       <iframe
         title="Manoj's playlist on Spotify"
         style={{ borderRadius: 12, height: 152 }}
