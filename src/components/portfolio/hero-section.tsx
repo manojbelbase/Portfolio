@@ -12,7 +12,7 @@ export default function HeroSection() {
         alt="Manoj Belbase banner"
         className="aspect-[16/6] w-full rounded-lg sm:aspect-[1440/500] lg:aspect-[1440/430]"
       />
-      <div className="relative ml-5 -mt-10">
+      <div className="relative ml-5 -mt-10 hidden md:block">
         <div data-profile-photo className="h-16 w-16 overflow-hidden rounded-lg bg-[#1a1a1a] ring-[var(--background)] border border-gray-100 dark:border-gray-600">
           <Image
             src="/profile-cropped.png"

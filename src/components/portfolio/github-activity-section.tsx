@@ -3,11 +3,11 @@ import { getGitHubActivity, GITHUB_USERNAME, type ContributionDay } from "@/lib/
 import SectionHeading from "./section-heading";
 
 const LEVEL_COLORS = [
-  "var(--surface-soft)",
-  "color-mix(in srgb, var(--foreground) 18%, transparent)",
-  "color-mix(in srgb, var(--foreground) 38%, transparent)",
-  "color-mix(in srgb, var(--foreground) 60%, transparent)",
-  "color-mix(in srgb, var(--foreground) 82%, transparent)",
+  "var(--gh-contrib-0)",
+  "var(--gh-contrib-1)",
+  "var(--gh-contrib-2)",
+  "var(--gh-contrib-3)",
+  "var(--gh-contrib-4)",
 ];
 
 function buildWeeks(days: ContributionDay[]) {
@@ -54,7 +54,7 @@ export default async function GithubActivitySection() {
       <SectionHeading>GitHub activity</SectionHeading>
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <p className="text-sm sm:text-[15px] text-[var(--muted)]">
-          <span className="font-medium text-[var(--foreground)]">
+          <span className="font-normal text-sm text-[var(--foreground)]">
             {activity.totalContributions.toLocaleString("en-US")}
           </span>{" "}
           contributions in the last year
@@ -63,7 +63,7 @@ export default async function GithubActivitySection() {
           href={`https://github.com/${GITHUB_USERNAME}`}
           target="_blank"
           rel="noreferrer"
-          className="group inline-flex items-center gap-1 text-[13px] text-[var(--muted)] transition hover:text-[var(--primary)]"
+          className="group hidden items-center gap-1 text-[13px] text-[var(--muted)] transition hover:text-[var(--primary)] md:inline-flex"
         >
           @{GITHUB_USERNAME}
           <ArrowUpRight

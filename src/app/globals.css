@@ -11,6 +11,11 @@
   --primary: #4ade80;
   --primary-soft: rgba(74, 222, 128, 0.16);
   --border: rgba(255, 255, 255, 0.1);
+  --gh-contrib-0: #161b22;
+  --gh-contrib-1: #0e4429;
+  --gh-contrib-2: #006d32;
+  --gh-contrib-3: #26a641;
+  --gh-contrib-4: #39d353;
 }
 
 html.dark {
@@ -22,6 +27,11 @@ html.dark {
   --primary: #4ade80;
   --primary-soft: rgba(74, 222, 128, 0.16);
   --border: rgba(255, 255, 255, 0.1);
+  --gh-contrib-0: #161b22;
+  --gh-contrib-1: #0e4429;
+  --gh-contrib-2: #006d32;
+  --gh-contrib-3: #26a641;
+  --gh-contrib-4: #39d353;
 }
 
 html:not(.dark) {
@@ -33,6 +43,11 @@ html:not(.dark) {
   --primary: #22c55e;
   --primary-soft: rgba(34, 197, 94, 0.1);
   --border: rgba(17, 17, 17, 0.1);
+  --gh-contrib-0: #ebedf0;
+  --gh-contrib-1: #9be9a8;
+  --gh-contrib-2: #40c463;
+  --gh-contrib-3: #30a14e;
+  --gh-contrib-4: #216e39;
 }
 
 @theme inline {
