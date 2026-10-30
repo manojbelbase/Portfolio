@@ -91,6 +91,15 @@ export function ProfileMascot() {
       const left = Math.max(12, Math.min(box.left, document.documentElement.clientWidth - box.width - 12));
       if (photo && window.scrollY < 120) {
         const photoBox = photo.getBoundingClientRect();
+        // Photo is hidden (below the md breakpoint): keep the mascot in flow beside the name.
+        if (photoBox.width === 0) {
+          mascot.style.width = "";
+          mascot.style.height = "";
+          mascot.style.position = "relative";
+          mascot.style.left = "";
+          mascot.style.top = "";
+          return;
+        }
         const startLeft = photoBox.left + (photoBox.width - size) / 2;
         const startTop = photoBox.top + (photoBox.height - size) / 2;
         photo.style.opacity = `${eased}`;
