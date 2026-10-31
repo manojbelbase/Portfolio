@@ -1,14 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronsDown } from "lucide-react";
+import { TextMorph } from "torph/react";
 import { workItems, npmPackages } from "@/data/portfolio-data";
 import { LinkPreview } from "@/components/ui/link-preview";
+import { TextHoverCard } from "@/components/ui/text-hover-card";
 import { cn } from "@/lib/utils";
 import SectionHeading from "./section-heading";
 
 const VISIBLE_COUNT = 3;
+
+function MorphText({ show, delay = 0, children }: { show: boolean; delay?: number; children: string }) {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (!show || ready) return;
+    const id = window.setTimeout(() => setReady(true), 60 + delay);
+    return () => window.clearTimeout(id);
+  }, [show, ready, delay]);
+
+  if (!show) return <>{children}</>;
+
+  return (
+    <TextMorph duration={450} respectReducedMotion>
+      {ready ? children : ""}
+    </TextMorph>
+  );
+}
 
 export default function ProjectsSection() {
   const [expanded, setExpanded] = useState(false);
@@ -19,13 +39,13 @@ export default function ProjectsSection() {
     <section id="work" className="mt-6 sm:mt-10 scroll-mt-6">
       <SectionHeading>Projects</SectionHeading>
       <div className="space-y-2" key={expanded ? "all" : "top"}>
-        {visibleItems.map((item, i) => (
+        {visibleItems.map((item, i) => {
+          const isNew = expanded && i >= VISIBLE_COUNT;
+          const morphDelay = isNew ? (i - VISIBLE_COUNT) * 120 : 0;
+          return (
           <div
             key={item.title}
-            className={cn(
-              "group flex items-center gap-2 sm:gap-3 py-1 text-[15px] text-[var(--muted)]",
-              expanded && i >= VISIBLE_COUNT && "animate-fade-slide-in",
-            )}
+            className="group flex items-center gap-2 sm:gap-3 py-1 text-[15px] text-[var(--muted)]"
           >
             <span className="relative inline-flex h-5 w-5 items-center justify-center overflow-hidden rounded-sm bg-[var(--primary-soft)] text-[10px] font-medium text-[var(--primary)] transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110">
               {item.logo ? (
@@ -44,9 +64,9 @@ export default function ProjectsSection() {
                     width={280}
                     height={160}
                     className="font-medium text-sm sm:text-base text-[var(--foreground)]  decoration-[var(--primary)] decoration-1 transition hover:text-[var(--primary)]"
-                  >
-                    {item.title}
-                  </LinkPreview>
+                >
+                  <MorphText show={isNew} delay={morphDelay}>{item.title}</MorphText>
+                </LinkPreview>
                 ) : (
                   <LinkPreview
                     url={item.href}
@@ -54,16 +74,21 @@ export default function ProjectsSection() {
                     height={160}
                     className="font-medium text-sm sm:text-base text-[var(--foreground)]  decoration-[var(--primary)] decoration-1 underline-offset-4 transition hover:text-[var(--primary)]"
                   >
-                    {item.title}
+                    <MorphText show={isNew} delay={morphDelay}>{item.title}</MorphText>
                   </LinkPreview>
                 )
               ) : (
-                <span className="font-medium text-[var(--foreground)]">{item.title}</span>
+                <span className="font-medium text-[var(--foreground)]">
+                  <MorphText show={isNew} delay={morphDelay}>{item.title}</MorphText>
+                </span>
               )}
-              <span className="text-[var(--muted)]"> - {item.note}</span>
+              <span className="text-[var(--muted)]">
+                <MorphText show={isNew} delay={morphDelay + 150}>{` - ${item.note}`}</MorphText>
+              </span>
             </span>
           </div>
-        ))}
+          );
+        })}
         <div className="group flex items-center gap-2 sm:gap-3 py-1 text-[15px] text-[var(--muted)]">
           <span className="relative inline-flex h-5 w-5 items-center justify-center overflow-hidden rounded-sm bg-[var(--primary-soft)] text-[10px] font-medium text-[var(--primary)] transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110">
             <Image src="/npm-logo.svg" alt="npm" width={20} height={20} className="h-full w-full object-contain" />
@@ -72,30 +97,14 @@ export default function ProjectsSection() {
             <span className="font-medium text-sm sm:text-base text-[var(--foreground)]">npm packages</span>
             <span className="text-[var(--muted)]"> - </span>
             {npmPackages.map((pkg, pkgIndex) => (
-              <span
-                key={pkg.name}
-                tabIndex={0}
-                role="button"
-                aria-label={`${pkg.name}: ${pkg.description}`}
-                className="group/pkg relative inline cursor-pointer rounded-sm transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--primary)]"
-              >
-                <a
+              <span key={pkg.name}>
+                <TextHoverCard
                   href={pkg.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="font-medium text-[var(--muted)] underline decoration-dotted decoration-[var(--muted)]/60 underline-offset-4 transition hover:text-[var(--primary)] hover:decoration-[var(--primary)]"
+                  title={pkg.name}
+                  description={pkg.description}
                 >
                   {pkg.name}
-                </a>
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-52 -translate-x-1/2 translate-y-1 scale-[0.97] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-2.5 text-left text-xs font-normal leading-5 text-[var(--muted)] opacity-0 shadow-xl transition-all duration-200 ease-out group-hover/pkg:translate-y-0 group-hover/pkg:opacity-100 group-hover/pkg:scale-100 group-focus-visible/pkg:translate-y-0 group-focus-visible/pkg:opacity-100 group-focus-visible/pkg:scale-100"
-                >
-                  <span className="mb-0.5 flex font-medium text-[var(--foreground)]">{pkg.name}</span>
-                  {pkg.description}
-                  <span className="absolute left-1/2 top-full -translate-x-1/2 border-8 border-transparent border-t-[var(--surface)]" />
-                </span>
+                </TextHoverCard>
                 {pkgIndex < npmPackages.length - 1 && (
                   <span className="text-[var(--muted)]">, </span>
                 )}
