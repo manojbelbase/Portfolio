@@ -44,7 +44,7 @@ export function HeroTechMorph() {
           />
         ))}
       </span>
-      <TextMorph duration={450} respectReducedMotion className="underline">
+      <TextMorph duration={450} respectReducedMotion className="font-medium underline">
         {TECHS[index].name}
       </TextMorph>
     </span>

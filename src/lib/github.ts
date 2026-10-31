@@ -1,4 +1,4 @@
-export const GITHUB_USERNAME = "ManojBelbase";
+export const GITHUB_USERNAME = "manojbelbase";
 
 export interface ContributionDay {
   date: string;
