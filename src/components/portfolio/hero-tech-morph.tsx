@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 const TECHS = [
   { name: "React.js", logo: "/react-logo.svg" },
   { name: "Next.js", logo: "/next.svg" },
+  { name: "TypeScript", logo: "/typescript-logo.svg" },
   { name: "Tailwind CSS", logo: "/tailwindcss-logo.svg" },
   { name: "shadcn/ui", logo: "/shadcn-logo.svg", darkInvert: true },
 ] as const;

@@ -52,14 +52,15 @@ export default function HeroSection() {
             .
           </p>
           <p>
-            I build with <HeroTechMorph /> — turning complex workflows into responsive interfaces,
-            reusable components, dashboards, and production-ready UI systems. I also work across{" "}
+            I work with <HeroTechMorph /> — turning complex workflows into responsive interfaces,
+            reusable components, dashboards, and production-ready UI systems. When products need
+            the full experience, I reach for{" "}
             <strong>backend services</strong> with{" "}
             <span className="inline-flex items-center gap-1 align-middle">
               <Image src="/express-logo.svg" alt="Express" width={16} height={16} className="h-4 w-4" />
               <u>Express</u>
             </span>{" "}
-            and <strong>LLM integrations</strong> when products need the full experience.
+            and <strong>LLM integrations</strong> too.
           </p>
           <p>
             <em>
