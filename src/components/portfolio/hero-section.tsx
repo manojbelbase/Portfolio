@@ -3,6 +3,7 @@ import { MousePointerClick } from "lucide-react";
 import { TiltGlowImage } from "@/components/ui/tilt-glow-image";
 import { ProfileMascot } from "./profile-mascot";
 import { HeroInlineIcon, HeroKeyword, HeroKhukuri, HeroMotionWord } from "./hero-keyword";
+import { HeroTechMorph } from "./hero-tech-morph";
 
 export default function HeroSection() {
   return (
@@ -51,16 +52,11 @@ export default function HeroSection() {
             .
           </p>
           <p>
-            I build with{" "}
-            <span className="inline-flex items-center gap-1 align-middle">
-              <Image src="/react-logo.svg" alt="React" width={14} height={14} className="h-3.5 w-3.5" />
-              <u>React</u>
-            </span>{" "}
-            and <u>Next.js</u>, turning complex workflows into responsive interfaces, reusable
-            components, dashboards, and production-ready UI systems. I also work across{" "}
+            I build with <HeroTechMorph /> — turning complex workflows into responsive interfaces,
+            reusable components, dashboards, and production-ready UI systems. I also work across{" "}
             <strong>backend services</strong> with{" "}
             <span className="inline-flex items-center gap-1 align-middle">
-              <Image src="/express-logo.svg" alt="Express" width={14} height={14} className="h-3.5 w-3.5" />
+              <Image src="/express-logo.svg" alt="Express" width={16} height={16} className="h-4 w-4" />
               <u>Express</u>
             </span>{" "}
             and <strong>LLM integrations</strong> when products need the full experience.
