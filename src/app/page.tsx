@@ -60,7 +60,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
       <SiteHeader />
-      <main className="mx-auto w-full max-w-[760px] px-3 pb-20 pt-1 sm:px-6">
+      <main className="mx-auto w-full max-w-[760px] px-3 pb-5 sm:pb-10 pt-1 sm:px-6">
         <HeroSection />
         <ProjectsSection />
         <ExperienceSection />
