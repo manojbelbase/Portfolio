@@ -13,7 +13,7 @@ const TECHS = [
   { name: "shadcn", logo: "/shadcn-logo.svg", darkInvert: true },
 ] as const;
 
-const CYCLE_MS = 3000;
+const CYCLE_MS = 2000;
 
 export function HeroTechMorph() {
   const [index, setIndex] = useState(0);
