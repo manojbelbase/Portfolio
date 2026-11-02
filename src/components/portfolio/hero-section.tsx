@@ -57,8 +57,14 @@ export default function HeroSection() {
             the full experience, I reach for{" "}
             <strong>backend services</strong> with{" "}
             <span className="inline-flex items-center gap-1 align-middle">
-              <Image src="/express-logo.svg" alt="Express" width={16} height={16} className="h-4 w-4" />
-              <u>Express</u>
+              <Image
+                src="/express-logo.svg"
+                alt="Express"
+                width={16}
+                height={16}
+                className="h-4 w-4 dark:invert"
+              />
+              <u className="font-medium">Express.js</u>
             </span>{" "}
             and <strong>LLM integrations</strong> too.
           </p>
