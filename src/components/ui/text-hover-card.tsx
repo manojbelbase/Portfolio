@@ -9,6 +9,7 @@ type TextHoverCardProps = {
   href: string;
   title: string;
   description: string;
+  meta?: React.ReactNode;
   children: React.ReactNode;
   triggerClassName?: string;
 };
@@ -17,6 +18,7 @@ export function TextHoverCard({
   href,
   title,
   description,
+  meta,
   children,
   triggerClassName,
 }: TextHoverCardProps) {
@@ -63,6 +65,11 @@ export function TextHoverCard({
             >
               <span className="mb-0.5 block font-medium text-[var(--foreground)]">{title}</span>
               {description}
+              {meta ? (
+                <span className="mt-2 flex items-center gap-1 border-t border-[var(--border)] pt-2 text-[11px] leading-4 text-[var(--muted)]">
+                  {meta}
+                </span>
+              ) : null}
             </motion.div>
           )}
         </AnimatePresence>
