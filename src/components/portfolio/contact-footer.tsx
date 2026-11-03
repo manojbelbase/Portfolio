@@ -100,7 +100,24 @@ export default function ContactFooter() {
         </span>
         .
       </p>
-      <p className="mt-5 text-sm">Designed &amp; developed by <a href="https://github.com/manojbelbase" target="_blank" rel="noreferrer" className="text-[var(--foreground)] font-medium">Manoj Belbase</a></p>
+      <div className="mt-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 border-t border-[var(--border)] pt-4">
+        <p className="flex flex-wrap items-baseline gap-x-1.5 gap-y-1 text-[13px] text-[var(--muted)]">
+          <span>Designed &amp; developed by</span>
+          <a
+            href="#top"
+            rel="noreferrer"
+            className="group inline-flex hover:underline items-center gap-1 text-[13px] font-medium text-[var(--foreground)] transition-colors  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+          >
+            Manoj Belbase
+          </a>
+        </p>
+        <span
+          suppressHydrationWarning
+          className="text-[12px] text-[var(--muted)]"
+        >
+          © {new Date().getFullYear()}
+        </span>
+      </div>
     </footer>
   );
 }
