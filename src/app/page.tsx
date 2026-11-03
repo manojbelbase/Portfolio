@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
+import { getNpmDownloads } from "@/lib/npm";
+import { npmPackages } from "@/data/portfolio-data";
 import {
   AchievementSection,
   ContactFooter,
@@ -52,7 +54,9 @@ const structuredData = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const npmDownloads = await getNpmDownloads(npmPackages.map((pkg) => pkg.name));
+
   return (
     <div id="top" className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <script
@@ -62,7 +66,7 @@ export default function Home() {
       <SiteHeader />
       <main className="mx-auto w-full max-w-[760px] px-3 pb-5 sm:pb-10 pt-1 sm:px-6">
         <HeroSection />
-        <ProjectsSection />
+        <ProjectsSection npmDownloads={npmDownloads} />
         <ExperienceSection />
         <AchievementSection />
         <EducationSection />

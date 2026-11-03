@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ChevronsDown } from "lucide-react";
+import { ChevronsDown, Download } from "lucide-react";
 import { TextMorph } from "torph/react";
 import { workItems, npmPackages } from "@/data/portfolio-data";
 import { LinkPreview } from "@/components/ui/link-preview";
@@ -11,6 +11,12 @@ import { cn } from "@/lib/utils";
 import SectionHeading from "./section-heading";
 
 const VISIBLE_COUNT = 3;
+
+function formatDownloads(count: number) {
+  if (count < 1000) return String(count);
+  const value = count / 1000;
+  return `${value >= 10 ? Math.round(value) : value.toFixed(1).replace(/\.0$/, "")}k`;
+}
 
 function MorphText({ show, delay = 0, children }: { show: boolean; delay?: number; children: string }) {
   const [ready, setReady] = useState(false);
@@ -30,7 +36,11 @@ function MorphText({ show, delay = 0, children }: { show: boolean; delay?: numbe
   );
 }
 
-export default function ProjectsSection() {
+export default function ProjectsSection({
+  npmDownloads = {},
+}: {
+  npmDownloads?: Record<string, number>;
+}) {
   const [expanded, setExpanded] = useState(false);
   const [hintDone, setHintDone] = useState(false);
   const visibleItems = expanded ? workItems : workItems.slice(0, VISIBLE_COUNT);
@@ -96,20 +106,31 @@ export default function ProjectsSection() {
           <span className="relative">
             <span className="font-medium text-sm sm:text-base text-[var(--foreground)]">npm packages</span>
             <span className="text-[var(--muted)]"> - </span>
-            {npmPackages.map((pkg, pkgIndex) => (
-              <span key={pkg.name}>
-                <TextHoverCard
-                  href={pkg.href}
-                  title={pkg.name}
-                  description={pkg.description}
-                >
-                  {pkg.name}
-                </TextHoverCard>
-                {pkgIndex < npmPackages.length - 1 && (
-                  <span className="text-[var(--muted)]">, </span>
-                )}
-              </span>
-            ))}
+            {npmPackages.map((pkg, pkgIndex) => {
+              const downloads = npmDownloads[pkg.name];
+              return (
+                <span key={pkg.name}>
+                  <TextHoverCard
+                    href={pkg.href}
+                    title={pkg.name}
+                    description={pkg.description}
+                    meta={
+                      downloads ? (
+                        <>
+                          <Download size={11} strokeWidth={2} aria-hidden="true" />
+                          {formatDownloads(downloads)} downloads last month
+                        </>
+                      ) : undefined
+                    }
+                  >
+                    {pkg.name}
+                  </TextHoverCard>
+                  {pkgIndex < npmPackages.length - 1 && (
+                    <span className="text-[var(--muted)]">, </span>
+                  )}
+                </span>
+              );
+            })}
           </span>
         </div>
       </div>

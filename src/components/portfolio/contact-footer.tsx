@@ -100,7 +100,7 @@ export default function ContactFooter() {
         </span>
         .
       </p>
-      <p className="mt-5 text-sm">Designed &amp; developed by <span className="text-[var(--foreground)]">Manoj Belbase</span></p>
+      <p className="mt-5 text-sm">Designed &amp; developed by <a href="https://github.com/manojbelbase" target="_blank" rel="noreferrer" className="text-[var(--foreground)] font-medium">Manoj Belbase</a></p>
     </footer>
   );
 }
