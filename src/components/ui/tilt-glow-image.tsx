@@ -1,12 +1,28 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type MotionPermissionAPI = {
   requestPermission?: () => Promise<"granted" | "denied">;
 };
+
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange: () => void) {
+  const query = window.matchMedia(REDUCED_MOTION_QUERY);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+
+function getReducedMotion() {
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+function getReducedMotionOnServer() {
+  return false;
+}
 
 type TiltGlowImageProps = {
   src: string;
@@ -23,10 +39,10 @@ export function TiltGlowImage({ src, alt, className, maxTilt = 7 }: TiltGlowImag
   const [hovered, setHovered] = useState(false);
   const [motionStatus, setMotionStatus] = useState("idle");
   const enableMotionRef = useRef<(() => Promise<void>) | null>(null);
-  const [reduced] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  const reduced = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotion,
+    getReducedMotionOnServer,
   );
 
   useEffect(() => {
