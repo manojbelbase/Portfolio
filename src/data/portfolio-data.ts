@@ -27,7 +27,7 @@ export const education: EducationItem[] = [
 ];
 
 export const writingItems: WritingItem[] = [
-  { title: "Frontend Monorepos Explained: When One Repository Makes Sense", meta: "Medium", href: "https://medium.com/@manojbelbase/frontend-monorepos-explained-when-one-repository-makes-sense-c69686f81f35" },
+  { title: "Frontend Monorepos Explained: When One Repository Makes Sense", meta: "Medium", href: "https://medium.com/@manojbelbase/frontend-monorepos-explained-a-beginners-guide-with-turborepo-and-pnpm-6167bab5edba" },
   { title: "Nepal's Digital ID Revolution: What You Need to Know", meta: "Medium", href: "https://medium.com/@manojbelbase/nepals-digital-id-revolution-what-you-need-to-know-about-the-national-identity-card-8fb6b0ff6229" },
 ];
 
