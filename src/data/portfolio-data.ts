@@ -27,7 +27,8 @@ export const education: EducationItem[] = [
 ];
 
 export const writingItems: WritingItem[] = [
-  { title: "Frontend Monorepos Explained: When One Repository Makes Sense", meta: "Medium", href: "https://medium.com/@manojbelbase/frontend-monorepos-explained-a-beginners-guide-with-turborepo-and-pnpm-6167bab5edba" },
+  { title: "How OpenAPI Codegen Simplifies API Integration in Frontend Development", meta: "Medium", href: "https://medium.com/@manojbelbase/openapi-codegen-and-swagger-explained-a-beginners-guide-for-frontend-developers-c91fdac1d62e?postPublishedType=repub" },
+  { title: "Frontend Monorepos Explained: A Beginner’s Guide with Turborepo and PNPM", meta: "Medium", href: "https://medium.com/@manojbelbase/frontend-monorepos-explained-a-beginners-guide-with-turborepo-and-pnpm-6167bab5edba" },
   { title: "Nepal's Digital ID Revolution: What You Need to Know", meta: "Medium", href: "https://medium.com/@manojbelbase/nepals-digital-id-revolution-what-you-need-to-know-about-the-national-identity-card-8fb6b0ff6229" },
 ];
 

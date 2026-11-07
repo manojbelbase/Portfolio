@@ -6,14 +6,14 @@ export default function WritingSection() {
   return (
     <section id="writing" className="mt-6 sm:mt-10 scroll-mt-6">
       <SectionHeading>Writing</SectionHeading>
-      <div className="sm:space-y-2 text-sm sm:text-[15px]">
+      <div className="sm:space-y-1.5 text-sm sm:text-[15px]">
         {writingItems.map((item) => (
           <a
             key={item.title}
             href={item.href}
             target={item.href.includes("medium.com") ? "_blank" : undefined}
             rel={item.href.includes("medium.com") ? "noreferrer" : undefined}
-            className="group flex items-center justify-between gap-3 py-2 text-[var(--foreground)] transition hover:text-[var(--primary)]"
+            className="group flex items-center justify-between gap-3 py-1.5 text-[var(--foreground)] transition hover:text-[var(--primary)]"
           >
             <span className="min-w-0 bg-[linear-gradient(var(--primary),var(--primary))] bg-left-bottom bg-no-repeat pb-0.5 text-left [background-size:0%_1px] transition-[background-size,color] duration-300 group-hover:[background-size:100%_1px]">
               {item.title}
