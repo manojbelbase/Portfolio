@@ -19,8 +19,6 @@ export function HeroTechMorph() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % TECHS.length);
     }, CYCLE_MS);
@@ -38,7 +36,7 @@ export function HeroTechMorph() {
             width={16}
             height={16}
             className={cn(
-              "absolute inset-0 h-4 w-4 transition-opacity duration-300",
+              "absolute inset-0 h-4 w-4 transition-opacity duration-300 motion-reduce:transition-none",
               i === index ? "opacity-100" : "opacity-0",
               "darkInvert" in tech && tech.darkInvert && "dark:invert",
             )}

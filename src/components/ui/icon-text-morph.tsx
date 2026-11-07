@@ -102,7 +102,6 @@ export function IconTextMorph({
 
   useEffect(() => {
     if (paused) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % items.length);
@@ -140,7 +139,7 @@ export function IconTextMorph({
               <span
                 key={item.label}
                 className={cn(
-                  "absolute inset-0 grid place-items-center rounded-full transition-[opacity,transform] duration-300 ease-out",
+                  "absolute inset-0 grid place-items-center rounded-full transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none",
                   item.badgeClassName,
                   active ? "scale-100 opacity-100" : "scale-75 opacity-0",
                 )}
