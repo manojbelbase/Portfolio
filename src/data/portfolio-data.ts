@@ -47,7 +47,7 @@ export const experience: ExperienceItem[] = [
     continuation: "Collaborating with design and backend teams to ship maintainable, high-quality experiences.",
   },
   {
-    period: "Jan 2026  — Aug 2026",
+    period: "Aug 2025 — Aug 2026",
     role: "Frontend Developer",
     company: "BlackTech",
     href: "https://blacktech.com.np",
@@ -61,7 +61,7 @@ export const experience: ExperienceItem[] = [
     continuation: "Worked closely with the team to deliver polished, high-quality user experiences.",
   },
   {
-    period: "DEC 2024 — Dec 2025",
+    period: "Dec 2024 — Jul 2025",
     role: "Frontend Developer",
     company: "Web Studio Nepal",
     href: "https://webstudionepal.com/",
