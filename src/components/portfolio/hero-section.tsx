@@ -25,7 +25,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      <div className="mt-4 space-y-1 sm:space-y-3">
+      <div className="mt-4 space-y-1.5 sm:space-y-2">
         <div className="flex items-center justify-between gap-2">
           <h1 className="flex min-w-0 flex-wrap items-center gap-2 text-3xl sm:text-[2rem] font-semibold tracking-[-0.05em] text-[var(--foreground)]">
           Manoj Belbase
@@ -36,41 +36,32 @@ export default function HeroSection() {
           <ProfileMascot />
         </div>
 
-        <div className="space-y-2 sm:space-y-4 text-[15px] leading-7 text-[var(--muted)]">
+        <div className="space-y-1.5 sm:space-y-2 text-[15px] leading-7 text-[var(--muted)]">
           <p>
-            I&apos;m a <HeroKhukuri label="Frontend Developer" />{" "}
-            turning complex ideas into intuitive web experiences, with a focus on{" "}
-            <HeroInlineIcon emoji="🤔" label="thoughtful design" />
+            I&apos;m a <HeroKhukuri label="Full Stack Developer" />{" "}
+            turning complex ideas into end-to-end web applications, with a focus on{" "}
+            <HeroInlineIcon emoji="🤔" label="thoughtful architecture" />
             {", "}
             <HeroMotionWord label="smooth interactions" />
-            {", and interfaces that are "}
+            {", and products that are "}
             <HeroKeyword
               icon={MousePointerClick}
               label="easy to use"
-              tip="Clear paths, readable UI — simple to use and maintain."
+              tip="Clear UX on the surface and reliable APIs underneath, simple to use and maintain."
             />
             .
           </p>
           <p>
-            I work with <HeroTechMorph /> — turning complex workflows into responsive interfaces,
-            reusable components, dashboards, and production-ready UI systems. When products need
-            the full experience, I reach for{" "}
-            <strong>backend services</strong> with{" "}
-            <span className="inline-flex items-center gap-1 align-middle">
-              <Image
-                src="/express-logo.svg"
-                alt="Express"
-                width={16}
-                height={16}
-                className="h-4 w-4 dark:invert"
-              />
-              <u className="font-medium">Express.js</u>
-            </span>{" "}
-            and <strong>LLM integrations</strong> too.
+            I build across the stack with <HeroTechMorph />, crafting responsive interfaces,
+            reusable UI systems, and scalable <strong>backend services</strong> with{" "}
+            <strong className="font-medium text-[var(--foreground)]">Nest.js</strong>,{" "}
+            <strong className="font-medium text-[var(--foreground)]">Express.js</strong>,{" "}
+            <strong className="font-medium text-[var(--foreground)]">PostgreSQL</strong>, and{" "}
+            <strong>LLM integrations</strong>.
           </p>
           <p>
             <em>
-              I focus on clear, practical interfaces that are easy to use, maintain, and improve.
+              I focus on clear, practical software, from database and APIs to the interface, that is easy to use, maintain, and scale.
             </em>
           </p>
         </div>

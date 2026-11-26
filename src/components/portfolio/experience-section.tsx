@@ -6,11 +6,11 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="mt-6 sm:mt-10 scroll-mt-6">
         <SectionHeading>Experience</SectionHeading>
-      <div className="space-y-4 sm:space-y-8">
+      <div className="space-y-3 sm:space-y-5">
         {experience.map((item) => (
           <article
             key={`${item.role}-${item.company}`}
-            className="grid min-w-0 gap-2 sm:grid-cols-[10rem_minmax(0,1fr)]"
+            className="grid min-w-0 gap-1.5 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-2"
           >
             <div className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
               {item.period}
@@ -37,7 +37,7 @@ export default function ExperienceSection() {
                   )}
                 </span>
               </h2>
-              <p className="mt-2 text-sm sm:text-[15px] sm:leading-7 text-[var(--muted)]">
+              <p className="mt-1.5 sm:mt-2 text-sm sm:text-[15px] sm:leading-7 text-[var(--muted)]">
                 {item.description}
                 {item.projects && (
                   <>

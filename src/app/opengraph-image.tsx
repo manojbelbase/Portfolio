@@ -12,8 +12,8 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", fontSize: 24, color: "#4ade80", letterSpacing: 4 }}>PORTFOLIO</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 76, fontWeight: 700, letterSpacing: -3 }}>{site.name}</div>
-          <div style={{ marginTop: 20, fontSize: 36, color: "#a3a3a3" }}>Frontend Developer</div>
-          <div style={{ marginTop: 24, fontSize: 26, color: "#4ade80" }}>React · Next.js · TypeScript</div>
+          <div style={{ marginTop: 20, fontSize: 36, color: "#a3a3a3" }}>Full Stack Developer</div>
+          <div style={{ marginTop: 24, fontSize: 26, color: "#4ade80" }}>Next.js · TypeScript · Nest.js · PostgreSQL</div>
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#a3a3a3" }}>manojbelbase.com.np</div>
       </div>

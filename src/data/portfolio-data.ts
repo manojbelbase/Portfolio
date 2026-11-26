@@ -2,16 +2,17 @@ import type {
   EducationItem,
   ExperienceItem,
   NpmPackage,
+  TechStackGroup,
   WorkItem,
   WritingItem,
 } from "@/types";
 
 export const workItems: WorkItem[] = [
-  { title: "ScheduleMate AI", note: "AI scheduling assistant", description: "Plans and manages calendar events through natural language.", href: "https://schedulemateai.vercel.app/", image: "/schedulemate-preview.webp", logo: "/schedulemate-logo.ico" },
-  { title: "SimplePatro", note: "Minimal Nepali calendar", description: "An ad-free Nepali Patro (Bikram Sambat) with tithi, events, and a clean everyday interface — on web, iOS, and Android.", href: "https://www.simplepatro.com/", logo: "/simplepatro-logo.ico" },
   { title: "DodgeVPN", note: "Secure VPN service", description: "A secure and reliable VPN service with online privacy, data encryption, and unrestricted internet access.", href: "https://dodgevpn.com/", image: "/dodgevpn-preview.webp", logo: "/dodgevpn-logo.ico" },
+  { title: "SimplePatro", note: "Minimal Nepali calendar", description: "An ad-free Nepali Patro (Bikram Sambat) with tithi, events, and a clean everyday interface on web, iOS, and Android.", href: "https://www.simplepatro.com/", logo: "/simplepatro-logo.ico" },
+  { title: "ScheduleMate AI", note: "AI scheduling assistant", description: "Plans and manages calendar events through natural language.", href: "https://schedulemateai.vercel.app/", image: "/schedulemate-preview.webp", logo: "/schedulemate-logo.ico" },
   { title: "CaseoPro", note: "iGaming & digital marketing platform", description: "A powerful and scalable iGaming and digital marketing platform offering smart strategies, engaging user experiences, and tools that help gaming brands grow.", href: "https://caseopro.vercel.app/", image: "/caseopro-preview.webp", logo: "/caseopro-logo.svg" },
-  { title: "Jiban Multi Agro", note: "Agriculture website", description: "An ecommerce and services website for fruit saplings, field visits, soil testing, and agricultural support.", href: "https://www.jibanmultiagro.com.np/", image: "/jibanmultiagro-preview.webp", logo: "/jibanmultiagro-logo.ico" },
+  { title: "Jiban Multi Agro", note: "Agriculture ecommerce & services", description: "An ecommerce and services website for fruit saplings, field visits, soil testing, and agricultural support.", href: "https://www.jibanmultiagro.com.np/", image: "/jibanmultiagro-preview.webp", logo: "/jibanmultiagro-logo.ico" },
 ];
 
 export const npmPackages: NpmPackage[] = [
@@ -19,7 +20,20 @@ export const npmPackages: NpmPackage[] = [
   { name: "ai-response-parser", href: "https://www.npmjs.com/package/ai-response-parser", description: "React component to render AI responses with markdown + code highlight." },
 ];
 
-export const techStack: string[] = ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL", "Docker","Git"];
+export const techStackGroups: TechStackGroup[] = [
+  {
+    label: "Frontend",
+    items: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+  },
+  {
+    label: "Backend & Data",
+    items: ["Node.js", "Nest.js", "Express.js", "PostgreSQL", "REST APIs", "Swagger / OpenAPI Codegen"],
+  },
+  {
+    label: "Tooling & DevOps",
+    items: ["Docker", "Git", "Monorepos (Turborepo)", "pnpm"],
+  },
+];
 
 export const education: EducationItem[] = [
   { period: "2021 — 2025", degree: "Bachelor of Computer Application (BCA)", institution: "Butwal Kalika Campus", href: "https://btlkalikacampus.edu.np/" },
@@ -62,11 +76,11 @@ export const experience: ExperienceItem[] = [
   },
   {
     period: "Dec 2024 — Jul 2025",
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     company: "Web Studio Nepal",
     href: "https://webstudionepal.com/",
     logo: "/webstudionepal-logo.png",
-    description: "Built ecommerce platforms and SEO-friendly websites for businesses across different industries, focusing on clean structure, responsive design, and performance.",
+    description: "Built end-to-end ecommerce platforms and SEO-friendly web applications for businesses across different industries, handling frontend interfaces, backend APIs, and performance.",
   },
 ];
 
