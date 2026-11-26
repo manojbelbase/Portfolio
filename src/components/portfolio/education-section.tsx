@@ -6,9 +6,9 @@ export default function EducationSection() {
   return (
     <section className="mt-6 sm:mt-10" aria-label="Education">
         <SectionHeading>Education</SectionHeading>
-      <div className="space-y-3">
+      <div className="space-y-1.5 sm:space-y-2">
         {education.map((item) => (
-          <article key={item.degree} className="flex min-w-0 items-start gap-3 sm:py-3">
+          <article key={item.degree} className="flex min-w-0 items-start gap-3 py-1 sm:py-1.5">
             <GraduationCap
               size={19}
               strokeWidth={1.7}

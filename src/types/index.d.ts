@@ -43,3 +43,8 @@ export interface WritingItem {
   meta: string;
   href: string;
 }
+
+export interface TechStackGroup {
+  label: string;
+  items: string[];
+}

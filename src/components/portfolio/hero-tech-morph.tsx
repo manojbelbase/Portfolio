@@ -6,9 +6,10 @@ import { TextMorph } from "torph/react";
 import { cn } from "@/lib/utils";
 
 const TECHS = [
-  { name: "React.js", logo: "/react-logo.svg" },
   { name: "Next.js", logo: "/nextjs-favicon.png" },
+  { name: "React.js", logo: "/react-logo.svg" },
   { name: "TypeScript", logo: "/typescript-logo.svg" },
+  { name: "Express.js", logo: "/express-logo.svg", darkInvert: true },
   { name: "Tailwind CSS", logo: "/tailwindcss-logo.svg" },
   { name: "shadcn", logo: "/shadcn-logo.svg", darkInvert: true },
 ] as const;

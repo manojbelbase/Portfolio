@@ -1,24 +1,24 @@
-# Manoj Belbase — Portfolio
+# Manoj Belbase - Portfolio
 
-Personal portfolio of **Manoj Belbase, Frontend Developer** — building modern web experiences with React, Next.js, and clean UI systems.
+Personal portfolio of **Manoj Belbase, Full Stack Developer**, building end-to-end web applications with Next.js, React, TypeScript, Nest.js, Express.js, and PostgreSQL.
 
 **Live:** https://manojbelbase.com.np
 
 ## About
 
-Frontend-focused Full Stack Developer turning complex ideas into intuitive web experiences — thoughtful design, smooth interactions, and easy-to-use interfaces. Mainly builds with React and Next.js, with backend experience in Express, PostgreSQL, and LLM integrations when products need the full experience.
+Full Stack Developer turning complex ideas into end-to-end web applications with thoughtful architecture, smooth interactions, and reliable APIs. Builds with Next.js, React, TypeScript, Node.js, Nest.js, Express.js, PostgreSQL, and LLM integrations.
 
 ## Tech Stack
 
-- Frontend (focus): Next.js, React, TypeScript
+- Frontend: Next.js, React, TypeScript
 - Styling / UI: Tailwind CSS, PostCSS, Motion, Lucide Icons, Radix Hover Card
-- Backend (working knowledge): Node.js, Express.js, PostgreSQL, Docker
-- Tooling: Git, ESLint, pnpm, clsx + tailwind-merge, qss
+- Backend & Data: Node.js, Nest.js, Express.js, PostgreSQL, REST APIs, Swagger / OpenAPI Codegen, Docker
+- Tooling & DevOps: Git, Monorepos (Turborepo), ESLint, pnpm, clsx + tailwind-merge, qss
 
 ## Fonts
 
-- Space Grotesk — body / sans (`--font-space-grotesk`)
-- JetBrains Mono — mono (`--font-jetbrains-mono`)
+- Space Grotesk: body / sans (`--font-space-grotesk`)
+- JetBrains Mono: mono (`--font-jetbrains-mono`)
 
 ## Contact
 

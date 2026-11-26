@@ -48,7 +48,7 @@ export default function ProjectsSection({
   return (
     <section id="work" className="mt-6 sm:mt-10 scroll-mt-6">
       <SectionHeading>Projects</SectionHeading>
-      <div className="space-y-2" key={expanded ? "all" : "top"}>
+      <div className="space-y-1.5 sm:space-y-2" key={expanded ? "all" : "top"}>
         {visibleItems.map((item, i) => {
           const isNew = expanded && i >= VISIBLE_COUNT;
           const morphDelay = isNew ? (i - VISIBLE_COUNT) * 120 : 0;

@@ -114,7 +114,7 @@ export function HeroInlineIcon({
 }
 
 /**
- * Khukuri hover for "Frontend Developer".
+ * Khukuri hover for "Full Stack Developer".
  * A sharp blade-glint sweeps left-to-right across the words.
  */
 export function HeroKhukuri({ label }: { label: string }) {
