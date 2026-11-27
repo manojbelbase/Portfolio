@@ -46,7 +46,7 @@ export default function ProjectsSection({
   const visibleItems = expanded ? workItems : workItems.slice(0, VISIBLE_COUNT);
 
   return (
-    <section id="work" className="mt-6 sm:mt-10 scroll-mt-6">
+    <section id="work" className="mt-6 sm:mt-8 scroll-mt-6">
       <SectionHeading>Projects</SectionHeading>
       <div className="space-y-1.5 sm:space-y-2" key={expanded ? "all" : "top"}>
         {visibleItems.map((item, i) => {

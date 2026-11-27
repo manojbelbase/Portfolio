@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Image from "next/image";
 import { TextMorph } from "torph/react";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,11 @@ const TECHS = [
 
 const CYCLE_MS = 2000;
 
-export function HeroTechMorph() {
+type HeroTechMorphProps = {
+  suffix?: ReactNode;
+};
+
+export function HeroTechMorph({ suffix }: HeroTechMorphProps) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -27,7 +31,10 @@ export function HeroTechMorph() {
   }, []);
 
   return (
-    <span className="inline-flex items-center gap-1 align-middle" aria-label={TECHS.map((t) => t.name).join(", ")}>
+    <span
+      className="inline-flex min-w-[8.25rem] items-center gap-1 align-middle whitespace-nowrap"
+      aria-label={TECHS.map((t) => t.name).join(", ")}
+    >
       <span aria-hidden="true" className="relative inline-block h-4 w-4 shrink-0">
         {TECHS.map((tech, i) => (
           <Image
@@ -44,9 +51,12 @@ export function HeroTechMorph() {
           />
         ))}
       </span>
-      <TextMorph duration={450} respectReducedMotion className="font-medium underline">
-        {TECHS[index].name}
-      </TextMorph>
+      <span className="inline-flex items-baseline">
+        <TextMorph duration={450} respectReducedMotion className="font-medium underline">
+          {TECHS[index].name}
+        </TextMorph>
+        {suffix}
+      </span>
     </span>
   );
 }

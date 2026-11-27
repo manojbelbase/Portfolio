@@ -83,7 +83,7 @@ export default function MusicSection() {
   }, []);
 
   return (
-    <section className="mt-6 sm:mt-10" aria-label="Music">
+    <section className="mt-6 sm:mt-8" aria-label="Music">
       <SectionHeading>Music</SectionHeading>
       <p className="mb-3 text-sm text-[var(--muted)]">Whatever&rsquo;s playing while I work.</p>
       <div ref={containerRef} aria-label="Spotify player" />

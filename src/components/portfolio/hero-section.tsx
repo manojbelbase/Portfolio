@@ -3,7 +3,6 @@ import { MousePointerClick } from "lucide-react";
 import { TiltGlowImage } from "@/components/ui/tilt-glow-image";
 import { ProfileMascot } from "./profile-mascot";
 import { HeroInlineIcon, HeroKeyword, HeroKhukuri, HeroMotionWord } from "./hero-keyword";
-import { HeroTechMorph } from "./hero-tech-morph";
 
 export default function HeroSection() {
   return (
@@ -52,17 +51,9 @@ export default function HeroSection() {
             .
           </p>
           <p>
-            I build across the stack with <HeroTechMorph />, crafting responsive interfaces,
-            reusable UI systems, and scalable <strong>backend services</strong> with{" "}
-            <strong className="font-medium text-[var(--foreground)]">Nest.js</strong>,{" "}
-            <strong className="font-medium text-[var(--foreground)]">Express.js</strong>,{" "}
-            <strong className="font-medium text-[var(--foreground)]">PostgreSQL</strong>, and{" "}
-            <strong>LLM integrations</strong>.
-          </p>
-          <p>
-            <em>
-              I focus on clear, practical software, from database and APIs to the interface, that is easy to use, maintain, and scale.
-            </em>
+            From responsive interfaces and reusable UI systems to scalable{" "}
+            <strong>backend services</strong> and <strong>LLM integrations</strong>, I ship
+            practical software built to maintain and scale.
           </p>
         </div>
       </div>
