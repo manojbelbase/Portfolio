@@ -3,7 +3,7 @@ import SectionHeading from "./section-heading";
 
 export default function AchievementSection() {
   return (
-    <section className="mt-6 sm:mt-10" aria-label="Achievements">
+    <section className="mt-6 sm:mt-8" aria-label="Achievements">
       <SectionHeading>Achievement</SectionHeading>
       <div className="py-1">
         <div className="flex items-start gap-3">

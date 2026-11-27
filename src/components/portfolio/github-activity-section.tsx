@@ -50,7 +50,7 @@ export default async function GithubActivitySection() {
   const weeks = buildWeeks(activity.contributions);
 
   return (
-    <section className="mt-6 sm:mt-10" aria-label="GitHub activity">
+    <section className="mt-6 sm:mt-8" aria-label="GitHub activity">
       <SectionHeading>GitHub activity</SectionHeading>
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <p className="text-sm sm:text-[15px] text-[var(--muted)]">

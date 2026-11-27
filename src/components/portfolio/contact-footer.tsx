@@ -86,7 +86,7 @@ export default function ContactFooter() {
   return (
     <footer
       id="contact"
-      className="mt-6 sm:mt-10 scroll-mt-6 border-t border-[var(--border)] pt-6 text-[14px] text-[var(--muted)]"
+      className="mt-6 sm:mt-8 scroll-mt-6 border-t border-[var(--border)] pt-6 text-[14px] text-[var(--muted)]"
     >
       <SectionHeading>Contact</SectionHeading>
       <p className="text-sm sm:text-[15px] leading-6 text-[var(--muted)]">
