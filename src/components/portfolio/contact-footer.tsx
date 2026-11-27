@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SectionHeading from "./section-heading";
 
 const EMAIL = "manojbelbase56@gmail.com";
 
@@ -85,10 +86,11 @@ export default function ContactFooter() {
   return (
     <footer
       id="contact"
-      className="mt-6 scroll-mt-6 border-t border-[var(--border)] pt-6 text-[14px] text-[var(--muted)]"
+      className="mt-6 sm:mt-10 scroll-mt-6 border-t border-[var(--border)] pt-6 text-[14px] text-[var(--muted)]"
     >
-      <p className="leading-6">
-        Follow my work on GitHub, read what I write on Medium, connect on LinkedIn, or email me at{" "}
+      <SectionHeading>Contact</SectionHeading>
+      <p className="text-sm sm:text-[15px] leading-6 text-[var(--muted)]">
+        Have an idea or want to collaborate? Reach out directly at{" "}
         <span className="inline-flex items-center gap-1 align-baseline">
           <a
             href={`mailto:${EMAIL}`}
@@ -103,7 +105,7 @@ export default function ContactFooter() {
             title="Copy email address"
             aria-label={copied ? "Email copied" : "Copy email address"}
             className={cn(
-              "inline-flex items-center p-0.5 transition-colors duration-200",
+              "inline-flex cursor-pointer items-center p-0.5 transition-colors duration-200",
               copied ? "text-[var(--primary)]" : "text-[var(--muted)] hover:text-[var(--foreground)]",
             )}
           >
