@@ -3,7 +3,7 @@ import SectionHeading from "./section-heading";
 
 export default function TechStackSection() {
   return (
-    <section className="mt-6 sm:mt-8" aria-label="Tech stack">
+    <section className="mt-4 sm:mt-6" aria-label="Tech stack">
       <SectionHeading>Tech stack</SectionHeading>
       <div className="divide-y divide-[var(--border)]">
         {techStackGroups.map((group) => (

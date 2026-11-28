@@ -53,12 +53,12 @@ export const experience: ExperienceItem[] = [
     company: "Route2Uni International Group",
     href: "https://route2unigroup.com",
     logo: "/route2uni-logo.webp",
-    description: "Leading frontend development, driving technical decisions and feature delivery,",
-    projectsPrefix: "Currently working on",
+    description: "Leading frontend development on",
+    projectsPrefix: "",
     projects: [
       { name: "Dreams Care Homes HRM", logo: "/dreams-care-homes-logo.ico" , href: "https://www.dreamscarehomes.co.uk/"},
     ],
-    continuation: "Collaborating with design and backend teams to ship maintainable, high-quality experiences.",
+    continuation: "Shaping technical decisions and shipping core features from design to production, collaborating closely with designers and backend engineers to build fast, maintainable interfaces.",
   },
   {
     period: "Aug 2025 — Aug 2026",
@@ -66,13 +66,13 @@ export const experience: ExperienceItem[] = [
     company: "BlackTech",
     href: "https://blacktech.com.np",
     logo: "/blacktech-logo.ico",
-    description: "Contributed responsive interfaces and performance improvements across BlackTech products including",
+    description: "Built responsive interfaces and improved frontend performance across BlackTech products including",
     projectsPrefix: "",
     projects: [
       { name: "RestroX", logo: "/restrox-logo.ico" , href: "https://restrox.com/"},
       { name: "SimplePatro", logo: "/simplepatro-logo.ico" , href: "https://simplepatro.com/"},
     ],
-    continuation: "Worked closely with the team to deliver polished, high-quality user experiences.",
+    continuation: "Worked closely with designers and engineers to refine everyday user flows, fix UI edge cases, and keep the apps fast and reliable across devices.",
   },
   {
     period: "Dec 2024 — Jul 2025",

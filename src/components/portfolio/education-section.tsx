@@ -4,7 +4,7 @@ import SectionHeading from "./section-heading";
 
 export default function EducationSection() {
   return (
-    <section className="mt-6 sm:mt-8" aria-label="Education">
+    <section className="mt-4 sm:mt-6" aria-label="Education">
         <SectionHeading>Education</SectionHeading>
       <div className="space-y-1.5 sm:space-y-2">
         {education.map((item) => (

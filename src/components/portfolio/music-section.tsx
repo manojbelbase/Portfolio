@@ -47,7 +47,7 @@ export default function MusicSection() {
     const setup = (api: IFrameAPI) => {
       api.createController(
         container,
-        { uri: spotifyTrackUri, width: "100%", height: 152 },
+        { uri: spotifyTrackUri, width: "100%", height: 80 },
         (embed) => {
           controller = embed;
           embed.addListener("playback_update", (event) => {
@@ -83,9 +83,9 @@ export default function MusicSection() {
   }, []);
 
   return (
-    <section className="mt-6 sm:mt-8" aria-label="Music">
+    <section className="mt-4 sm:mt-6" aria-label="Music">
       <SectionHeading>Music</SectionHeading>
-      <p className="mb-3 text-sm text-[var(--muted)]">Whatever&rsquo;s playing while I work.</p>
+      <p className="mb-2 text-sm text-[var(--muted)]">Whatever&rsquo;s playing while I work.</p>
       <div ref={containerRef} aria-label="Spotify player" />
     </section>
   );
