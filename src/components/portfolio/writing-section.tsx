@@ -4,7 +4,7 @@ import SectionHeading from "./section-heading";
 
 export default function WritingSection() {
   return (
-    <section id="writing" className="mt-6 sm:mt-8 scroll-mt-6">
+    <section id="writing" className="mt-4 sm:mt-6 scroll-mt-6">
       <SectionHeading>Writing</SectionHeading>
       <div className="space-y-1.5 sm:space-y-2 text-sm sm:text-[15px]">
         {writingItems.map((item) => (

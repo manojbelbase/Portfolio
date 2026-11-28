@@ -4,7 +4,7 @@ import SectionHeading from "./section-heading";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="mt-6 sm:mt-8 scroll-mt-6">
+    <section id="experience" className="mt-4 sm:mt-6 scroll-mt-6">
         <SectionHeading>Experience</SectionHeading>
       <div className="space-y-3 sm:space-y-5">
         {experience.map((item) => (
