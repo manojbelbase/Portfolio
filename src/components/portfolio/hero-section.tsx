@@ -24,7 +24,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      <div className="mt-2 space-y-1 sm:space-y-1.5">
+      <div className="mt-1 space-y-1 sm:space-y-1.5">
         <div className="flex items-center justify-between gap-2">
           <h1 className="flex min-w-0 flex-wrap items-center gap-2 text-3xl sm:text-[2rem] font-semibold tracking-[-0.05em] text-[var(--foreground)]">
           Manoj Belbase
