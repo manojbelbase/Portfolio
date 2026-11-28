@@ -77,44 +77,31 @@ export function ProfileMascot() {
       }
 
       const box = anchor.getBoundingClientRect();
-      const progress = Math.max(0, Math.min(1, window.scrollY / 120));
-      const eased = progress * progress * (3 - 2 * progress);
-      const initialSize = box.width + 24;
-      const size = initialSize + (box.width - initialSize) * eased;
+      const size = box.width;
       mascot.style.width = `${size}px`;
       mascot.style.height = `${size}px`;
-      const startY = box.top + window.scrollY;
-      const bottom = Math.max(12, window.innerHeight - size - 16);
-      // Follow the reader gradually, staying inside the viewport.
-      const top = Math.min(bottom, Math.max(12, startY + window.scrollY * 0.12));
-      // Keep the mascot aligned with its original position beside the name.
-      const left = Math.max(12, Math.min(box.left, document.documentElement.clientWidth - box.width - 12));
-      if (photo && window.scrollY < 120) {
-        const photoBox = photo.getBoundingClientRect();
+
+      if (window.scrollY === 0) {
+        const photoBox = photo?.getBoundingClientRect();
         // Photo is hidden (below the md breakpoint): keep the mascot in flow beside the name.
-        if (photoBox.width === 0) {
-          mascot.style.width = "";
-          mascot.style.height = "";
+        if (!photoBox || photoBox.width === 0) {
           mascot.style.position = "relative";
           mascot.style.left = "";
           mascot.style.top = "";
           return;
         }
+        // At the top of the page the mascot sits over the profile photo, hiding it.
+        if (photo) photo.style.opacity = "0";
         const startLeft = photoBox.left + (photoBox.width - size) / 2;
         const startTop = photoBox.top + (photoBox.height - size) / 2;
-        photo.style.opacity = `${eased}`;
-        // Three small steps, fading out at both ends of the scroll path.
-        const stride = progress * Math.PI * 6;
-        const envelope = Math.sin(progress * Math.PI);
-        const bounce = -Math.abs(Math.sin(stride)) * 7 * envelope;
-        const tilt = Math.sin(stride) * 4 * envelope;
-        if (walking) walking.style.transform = `translateY(${bounce}px) rotate(${tilt}deg)`;
-        place(startLeft + (left - startLeft) * eased, startTop + (top - startTop) * eased);
+        place(startLeft, startTop);
         return;
       }
-      mascot.style.position = "fixed";
-      mascot.style.left = `${left}px`;
-      mascot.style.top = `${top}px`;
+
+      // Once scrolling starts, snap straight to a fixed spot on the right and stay there.
+      const left = Math.max(12, Math.min(box.left, document.documentElement.clientWidth - size - 12));
+      const top = box.top + window.scrollY;
+      place(left, top);
     };
     const schedule = () => {
       if (!frame) frame = window.requestAnimationFrame(position);
@@ -125,6 +112,8 @@ export function ProfileMascot() {
       drag = { id: event.pointerId, x: event.clientX, y: event.clientY, left: box.left, top: box.top };
       suppressClick = false;
       if (walking) walking.style.transform = "";
+      // Track the pointer 1:1 instead of easing behind it.
+      mascot.style.transitionProperty = "none";
       // Capture on the button so an ordinary tap still reaches its reaction handler.
       mascot.querySelector("button")?.setPointerCapture(event.pointerId);
     };
@@ -142,6 +131,7 @@ export function ProfileMascot() {
       if (event.pointerId !== drag?.id) return;
       drag = null;
       mascot.style.cursor = "";
+      mascot.style.transitionProperty = "";
     };
     const onClick = (event: MouseEvent) => {
       if (!suppressClick || event.detail === 0) return;
@@ -208,7 +198,7 @@ export function ProfileMascot() {
       <div
         ref={mascotRef}
         title="Drag to move · Arrow keys move · Home resets position"
-        className="relative z-40 size-12 touch-none select-none sm:size-[72px]"
+        className="relative z-40 size-12 touch-none select-none transition-[left,top] duration-150 ease-out motion-reduce:transition-none sm:size-[72px]"
       >
         <div ref={walkingRef} className="size-full origin-bottom">
         <span

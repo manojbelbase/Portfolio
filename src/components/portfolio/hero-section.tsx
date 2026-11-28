@@ -13,7 +13,7 @@ export default function HeroSection() {
         className="aspect-[16/6] w-full rounded-lg sm:aspect-[1440/500] lg:aspect-[1440/430]"
       />
       <div className="relative ml-5 -mt-10 hidden md:block">
-        <div data-profile-photo className="h-16 w-16 overflow-hidden rounded-lg bg-[#1a1a1a] ring-[var(--background)] border border-gray-100 dark:border-gray-600">
+        <div data-profile-photo className="h-16 w-16 overflow-hidden rounded-lg bg-[#1a1a1a] ring-[var(--background)] border border-gray-100 transition-opacity duration-150 motion-reduce:transition-none dark:border-gray-600">
           <Image
             src="/profile-cropped.png"
             alt="Manoj Belbase"
@@ -24,7 +24,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      <div className="mt-2 space-y-1 sm:space-y-1.5">
+      <div className="mt-1 space-y-1 sm:space-y-1.5">
         <div className="flex items-center justify-between gap-2">
           <h1 className="flex min-w-0 flex-wrap items-center gap-2 text-3xl sm:text-[2rem] font-semibold tracking-[-0.05em] text-[var(--foreground)]">
           Manoj Belbase

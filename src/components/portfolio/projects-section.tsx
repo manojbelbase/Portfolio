@@ -151,7 +151,7 @@ export default function ProjectsSection({
               strokeWidth={2}
               aria-hidden="true"
               className={cn(
-                "transition-transform duration-300",
+                "transition-transform duration-300 cursor-pointer",
                 expanded && "rotate-180",
                 !expanded && !hintDone && "animate-expand-hint",
               )}
